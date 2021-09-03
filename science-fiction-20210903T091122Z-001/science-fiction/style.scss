@@ -1,0 +1,94 @@
+@mixin my-font {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1em;
+    font-weight: 200;
+    
+}
+
+@mixin rounded-conors ($radius: 10px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+$my-color: rgb(15, 15, 15);
+$tekst-color: white;
+
+h1 {
+    color: $my-color;
+    @include my-font;
+}
+
+// nesting //
+
+.menu {
+    list-style: none;
+    background-color: $my-color;
+    @include rounded-conors;
+    margin-top: 10px;
+    height: 20px;
+    li {
+        display: inline;
+        margin-top: 10px;
+        a {
+            color: $tekst-color;
+    text-decoration: none;
+    margin-right: 30px;
+    @include my-font;
+ 
+        }
+    }
+}
+
+.overskrift  {
+@include my-font;
+}
+
+.underskrift {
+    @include my-font;
+    font-weight: 600;
+}
+
+button {
+    width: 420px;
+    height: 45px;
+    background-color: $my-color;
+    border: none;
+    color: $tekst-color;
+    cursor: pointer;
+    @include rounded-conors;
+    text-align: center;  
+    margin-top: 15px;    
+}
+
+.titel {
+    color: $tekst-color;
+    font-size: 20px;
+    text-align: center;
+    @include my-font;
+    background-color: $my-color;
+    @include rounded-conors;
+}
+
+.flex-box {
+display: flex;
+}
+
+.picture img {
+display: flex;
+max-width: 100%;
+height: auto;
+@include rounded-conors;
+justify-content: center;
+}
+
+.box {
+    justify-content: center;
+    text-align: center;
+}
+
+p {
+    max-width: 700px;
+    @include my-font;
+    font-size: .9em;
+}
